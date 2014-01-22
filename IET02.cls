@@ -540,7 +540,8 @@
 \setlength\fboxrule{.4\p@}
 %
 %\renewcommand\theequation{\@arabic\c@equation}
-\RequirePackage{klumath}[1998/02/11]
+%removed ozan
+%\RequirePackage{klumath}[1998/02/11]
 %
 \newcounter{figure}
 \renewcommand\thefigure{\@arabic\c@figure}

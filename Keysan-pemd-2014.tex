@@ -9,11 +9,13 @@
 %% Load graphicx package
 \usepackage{mathptmx,graphicx}
 
+\graphicspath{{images/}}
+
 \begin{document}
 
 \title{Towards More Reliable and Cost Effective \\Superconducting Generators for Wind Turbines}
 
-\markboth{Author title}{Article title}
+\markboth{O. Keysan, P. Radyjowski, J. Burchell, M. A. Mueller}{Towards More Reliable and Cost Effective uperconducting Generators for Wind Turbines}
 
 \author{O. Keysan$^{*}$, P. Radyjowski, J. Burchell, M. A. Mueller}
 
@@ -39,18 +41,61 @@ A small linear prototype with copper winding is manufactured to prove the concep
 
 \section{Introduction}
 
-Superconducting generators known 1960s
-low temperature HTS generator
+Many superconducting machines have been designed and manufactured since the early days of superconductivity. For example, General Electric developed a 20 MW low-temperature superconducting generator in 1981 (see Fig. \ref{GE_LTS_machine}). There are a few other projects as listed in \cite{Barnes2005}, however, most of them just remained as prototypes due to cooling issues and high cost.
 
-Ship propulsion systems (36.5 MW generator)
+One of the practical applications of the superconducting machines is ship propulsion motors. Superconducting propulsion motors offer reduced mass and volume, which increases the cargo capacity or extends the range of the ship. An example of such a motor is presented in Fig. \ref{converteam_5MW}, which is manufactured by Converteam and AMSC in 2011. It can be seen from the figure that the HTS motor is twice as powerful as the load motor, it is much smaller. A 36.5 MW, 120 rpm superconducting machine was also manufactured, which weights just 75 tonnes \citep{Gamble2011}.
 
-Large offshore wind turbines
-- 10 MW
-- tower head mass
-- direct drive generators
+  \begin{figure}[]
+    \centering
+    \includegraphics[width=0.3\textwidth]{GE_LTS_machine}
+    \caption{General Electric's 20 MW low-temperature superconducting generator with Nb-Ti wire (1981) \cite{Barnes2005}.} 
+    \label{GE_LTS_machine}
+  \end{figure}
+
+  \begin{figure}[]
+    \centering
+    \includegraphics[width=0.45\textwidth]{converteam_5MW}
+    \caption{Converteam 5 MW HTS ship propulsion motor coupled to test machine  \cite{Kalsi2004h}.} 
+    \label{converteam_5MW}
+  \end{figure}
+
+The machines presented in the previous paragraph and many others have the same topology: synchronous motor with superconducting rotor. Copper windings are usually used in the armature because of AC losses in a superconducting coil limits the current density. 
+
+
+Average size of onshore wind turbines are limited in 3--3.5~MW range due to transportation limitations and wind speeds. However, there is a trends towards larger wind turbines for offshore installations. This trend can be seen in Fig. \ref{offshore-turbine-size}, which shows the turbine size increased from 2 MW to 6 MW in ten years. Larger wind turbines reduces the installation and maintenance cost per MW, benefit from higher wind speeds. In \cite{Abrahamsen2010}, it is stated that 10 MW offshore wind turbines are desirable in 2020. This is a ambitious challenge to achieve with the existing power take-off(PTO) systems. The geared systems, which is the most common PTO system, have some reliability issues and the mass of the gearbox increases enormously with increasing torque requirements. Direct-drive permanent magnet generators (DDPMG) also suffer from high mass problem and the diameter of these machines are quite large. 
+
+Superconducting machines are proposed to minimize the mass of the PTO system. The reduction of the tower head-mass will also help to reduce cost of installation and structural components costs (e.g. tower, foundation).
+
+\begin{figure}[]
+  \centering
+  \includegraphics[width=0.45\textwidth]{offshore-turbine-size}
+\caption{Commercial offshore wind farms turbine size for UK and Europe. Bubble size is proportional to the wind farm rated output \cite{bvg}.}
+  \label{offshore-turbine-size}
+\end{figure}
+
+
+
 
 
 \section{A Review of Superconducting Machines}
+
+bi onceki sectiondan devam
+
+The synchronous generator with a superconducting rotor introduces many problems. Some of these can be listed as:
+
+\begin{itemize}
+  \item Rotating TransNo rotating transfer coupler, more robust and cheaper cooling system.
+  \item No electrical brushes or complex excitation systems.
+  \item No centrifugal forces and transient torques that can damage the superconducting material.
+  \item Simpler winding support.
+\end{itemize}
+
+\begin{description}
+  \item[Rotating Transfer Coupler:] As the superconducting coil is in the rotor a coupler is required to transfer the coolant from cryocoolers to the rotor structure. This coupler introduces reliability issues and requires regular maintenance. Furthermore, it is the single point of failure for the all system. There are some designs to simplify or remove this coupler. For example AMSC plans to put the cold heads in the rotor for their 10 MW, 10 rpm generator design \cite{amsc_presentation}. General Electric plans to eliminate the cryocoupler by using a rotating armature structure \cite{Stautner2012}. However, the design still requires high current electrical brushes, which require regular maintenance.
+
+  \item[Second] The second item
+  \item[Third] The third etc \ldots
+\end{description}
 
 literaturdeki wind turbinler
 
