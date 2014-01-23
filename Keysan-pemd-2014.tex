@@ -8,6 +8,7 @@
 
 %% Load graphicx package
 \usepackage{mathptmx,graphicx}
+\usepackage[font=small]{subfig}
 
 \graphicspath{{images/}}
 
@@ -93,21 +94,74 @@ The synchronous generator with a superconducting rotor introduces many problems.
 \begin{description}
   \item[Rotating Transfer Coupler:] A coupler is required to transfer the coolant from cryocoolers to the rotating superconducting coil. This coupler introduces reliability issues and requires regular maintenance. Furthermore, it is the single point of failure for the whole system. There are some designs that aim to simplify or remove the cryocoupler. For example AMSC plans to put the cold heads in the rotor for their 10 MW, 10 rpm generator design \cite{amsc_presentation}, but the design still requires couplers. General Electric plans to eliminate the cryocoupler by using a stationary superconducting coil and a rotating armature structure \cite{Stautner2012}. However, the design still requires high current electrical brushes, which require regular maintenance.
 
-  \item[Electric Brushes:] 
-  \item[Torque Transfer Structure:] The second item
-  \item[Third] The third etc \ldots
+  \item[Electric Excitation System:] Brushed or brushless excitation system is required for rotating superconducting field windings.
+
+  \item[Torque Transfer Structure:] Electromagnetic torque is generated on the superconducting winding in the conventional superconducting machine topology. Thus, it is required to design a torque transfer tube that extends through cryogenic temperature to room temperature. Usually carbon fibre materials are used to minimize the heat loss, but design of these components are difficult and increases the cost.
+
+  \item[Transient forces in SC coil:] In a rotating superconducting winding, superconducting tape is exposed to centrifugal and other transient forces. However, second generation HTS tapes are in crystal structure and high stresses in the coil may result in cracks, which spoils the superconductivity.
 \end{description}
 
-literaturdeki wind turbinler
+There are also other types of superconducting machines. Instead of a superconducting field winding, magnetised bulk superconducting materials can be used, which is similar to a permanent magnet generator. Bulk superconductors can be magnetized in situ or externally. External magnetization is not a feasible method since it would be extremely difficult to handle the pre-magnetized bulk superconductors during the machine assembly. Moreover, if the cooling system fails,  the superconducting magnets will de-magnetize and the machine will be required to be disassembled.  
+Thus, in situ magnetization method is the only feasible method for superconducting machines. 
+In \cite{Matsuzaki2007}, HTS bulk magnets are magnetized by the pulsed field magnetization method by using a pair of the armature coils. However, the maximum flux density magnitude is limited by the current density of armature coils. There are some novel flux pumping methods that magnetize superconductors gradually by magnetic flux or thermal waves such as \cite{Masson2007b,Coombs2009}. Although these methods have some great potential, they are not proven for large scale applications yet.
 
-most common type: HTS rotor synchronous
-
-magnetised generators
-
-electromagnetic pumping 
+There is also fully superconducting machines. Although, MgB2 wires look promising, the AC losses in the superconducting coils limits the operation frequency of such machines. A 10 MW, 10 rpm fully superconducting machine is presented in \cite{Terao2012}, but it requires 250--300~km of HTS tape and MgB2 wire each, which makes the design economically infeasible.
 
 \section{Requirements of a Wind Turbine Generator}
 
+There are many direct-drive superconducting generator designs for large offshore wind turbines, most of which are 10 MW, 10 rpm generators. Designers usually concentrate on electromagnetic optimization, and performance of the machine, but neglects the operating conditions and requirements of an offshore wind turbine. These can be listed as follows:
+
+\begin{description}
+  \item[\textbf{Reliability:}] The maintenance of offshore wind turbines are very difficult and expensive. Furthermore, access to the turbine is subject to the weather and the sea conditions, which adds weeks or months of lost generation income on top of the repair cost. Thus, the reliability of an offshore wind turbine is very important. The reliability of superconducting machines is questionable, but the reliability can be improved by minimising extra equipments and moving parts (such as cryocouplers or electric brushes). 
+
+  \item[\textbf{Redundancy:}] There are some subsystems that can not be eliminated in a superconducting machine, such as the refrigeration system. In this case, redundancy should be introduced, in a way that any failures between planned maintenance periods should not cause any down times.
+
+  \item[\textbf{Modularity:}] Modularity is another form of redundancy. Modularity has two advantages: firstly, even if a section of a PTO system fails the remaining sections can operate at partial load until the next maintenance. For example, Clipper Wind developed a wind turbine (C93 Liberty) that has four parallel PM generators coupled to the gearbox. Thus, a failure in one of the generators will only result in 25 \% loss in the power output. Secondly, by modularity each section will be kept in manageable sizes, and can be replaced by on-site cranes without the need for expensive cranes. It is stated in \cite{Kaiser2007} that the replacement of a gearbox (of an onshore wind turbine) can cost as much as 10 \% of the initial construction cost of a turbine. It is a much difficult and expensive task to replace gearbox or drive-drive generator for an offshore wind turbine.
+
+  \item[\textbf{Tower Head Mass:}] A lower tower head mass help to reduce the installation cost and also manufacturing cost by reducing the structural mass requirements of the turbine. In the design of superconducting machines, the active material mass is usually optimised, but the structural mass is neglected. However, due to increased airgap flux densities, the stress acting on the generator structure is higher and optimisation in the structure will help to reduce the overall generator mass.
+
+ \end{description}
+
+
+\section{Proposed Generator} % (fold)
+\label{sec:proposed_generator}
+
+A transverse flux superconducting machine topology was proposed in \cite{Keysan2011e,Keysan2012a}. The generator consists of a single loop-shaped stationary superconducting coil, a modular rotor that consists of claw-poles made of laminated steel (see Fig. \ref{rotational_claw_schematic}). The biggest advantages of the design is having a stationary superconducting coil and armature. The initial design has unbalanced forces acting on the claw pole rotor and also requires use of soft magnetic composite (SMC) material in the inner stator. Thus, it is not really suitable for a large scale applications.
+
+The machine presented in Fig. \ref{rotational_claw_side} can be rotated 90 degrees to obtain an axial flux machine as shown in Fig. \ref{axial_claw_pole}. Then, two axial machine claw poles machines can be combined to obtain a double-sided machine as shown in Fig. \ref{double_claw_pole}. In this configuration, there is also a single superconducting field winding, but the design has two independent armature windings. The magnetic flux travels along the claw poles and links the independent armature windings on each end. The magnetic attraction forces acting on the claw pole are symmetrical and cancel each other (assuming the air-gap clearance on each side is equal). 
+
+In the double-claw machine, soft-magnetic composite material is no longer needed as the flux through the field core travels only in the axial direction, and the field core can be manufactured from steel laminations.
+The advantages of the double-sided claw pole topology can be summarised as:
+
+\begin{itemize}
+  \item Stationary superconducting field winding (no transfer couplers).
+  \item No electromagnetic forces acting on the superconducting coil (simpler mechanical support).
+  \item Magnetic attraction forces on the large claw poles are symmetrical and cancel each other (reduced structural mass).
+  \item Two independent armature windings (improved modularity).
+\end{itemize}
+
+
+
+
+\begin{figure}[]
+  \centering
+  \subfloat[Side view.]{\label{rotational_claw_side}\includegraphics[scale=0.7]{rotational_claw_schematic}}
+
+  \subfloat[Front section view.]{\label{rotational_claw_front}\includegraphics[scale=0.7]{rotational_claw_schematic2}}
+    \caption{Basic schematic and flux lines in the transverse flux claw pole superconducting machine.} 
+    \label{rotational_claw_schematic}
+\end{figure}
+
+
+\begin{figure}[]
+  \centering
+  \subfloat[Axial claw pole.]{\label{axial_claw_pole}\includegraphics[scale=0.66]{axial_claw_pole}}
+  \subfloat[Double-sided claw pole.]{\label{double_claw_pole}\includegraphics[scale=0.7]{double_claw_pole}}
+    \caption{Evolution of the double sided transverse flux claw pole topology.} 
+    \label{claw_pole_evolution}
+\end{figure}
+
+% section proposed_generator (end)
 
 \section{Manuscript preparation}
 
@@ -188,15 +242,16 @@ separate section at the end of the text.
 
 Thank you for your cooperation in complying with these instructions.
 
-\begin{thebibliography}{9}
-\vspace{1pc}
+\bibliography{pemd-2014}
 
-\bibitem{}A. B. Author, C. D. Author. ``Title of the article'',
-\textit{The Journal}, \textbf{volume}, pp.~110--120, (2000).\vspace{.4pc}
-\end{thebibliography}
+\bibliographystyle{plain}
 
-The reference list should be in numerical order and each number matches and
-refers to the one in the text. All references should be cited in the text,
-and using square brackets such as [1] and [2, 3].
+% \begin{thebibliography}{9}
+% \vspace{1pc}
+
+% \bibitem{}A. B. Author, C. D. Author. ``Title of the article'',
+% \textit{The Journal}, \textbf{volume}, pp.~110--120, (2000).\vspace{.4pc}
+% \end{thebibliography}
+
 
 \end{document}
